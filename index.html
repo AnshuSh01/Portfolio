@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" media="screen and (max-width:1000px)" href="phone2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Merriweather+Sans:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #EEF8FC;
+        }
+
+        /* NAVIGATION BAR */
+
+        #navbar {
+            display: flex;
+            font-family: "Baloo Bhai 2", cursive;
+            position: sticky;
+            align-items: center;
+            top: 0px;
+        }
+
+        #navbar ul {
+            display: flex;
+        }
+
+        #navbar ul li {
+            display: block;
+            list-style: none;
+            font-size: 1rem;
+        }
+
+        #navbar ul a {
+            text-decoration: none;
+            display: block;
+            padding: 9px 10px;
+            margin: 10px 15px;
+            border-radius: 15px;
+            color: white;
+            transition: .2s linear;
+        }
+
+        #navbar li a:hover {
+            color: #48dbfb;
+        }
+
+        #navbar::before {
+            content: "";
+            background-color: black;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            opacity: 0.4;
+            z-index: -1;
+            top: 0px;
+            left: 0px;
+        }
+
+        /* HOME */
+
+        #home {
+            display: flex;
+            font-family: 'Merriweather', serif;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 33px 20px;
+            height: 425px;
+            font-size: 1.2rem;
+        }
+
+        #home::before {
+            content: "";
+            position: absolute;
+            background: url("https://media.istockphoto.com/photos/pink-yellow-and-orange-colors-defocused-abstract-smooth-background-picture-id1256009727?k=20&m=1256009727&s=612x612&w=0&h=J-fhRDZivDVRVmP4zsjnrrl1mcx8IOJcOTQgQ-767Ek=") no-repeat center center/cover;
+            opacity: 0.6;
+            z-index: -1;
+            height: 480px;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+        }
+
+        .container-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container-items .items {
+            padding: 13px 27px;
+        }
+
+        .items:hover {
+            transform-origin: 50% 50%;
+            transform-box: fill-box;
+            animation: items 1.5s infinite;
+        }
+
+        @keyframes items {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #home .item {
+            margin: 3px 3px;
+        }
+
+        .btn {
+            padding: 5px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: rgb(197, 230, 218);
+            font-family: 'Merriweather', serif;
+            margin-top: 24px;
+            font-size: 0.9rem;
+            margin: 22px 17px;
+        }
+
+        .btn:hover {
+            background-color: aquamarine;
+        }
+
+        /* ABOUT */
+
+        .data {
+            color: black;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-left: 85px;
+            font-family: 'Merriweather', serif;
+        }
+
+        #about {
+            margin: 8px;
+            display: flex;
+            flex-direction: row;
+            padding: 9px 26px;
+            font-family: 'Merriweather', serif;
+            color: white;
+            font-size: 1rem;
+        }
+
+        #about h2.item {
+            padding: 10px 0px;
+        }
+
+        /* SKILLS */
+
+        #skill {
+            font-family: 'Merriweather', serif;
+        }
+
+        .skills {
+            margin-top: 17px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-left: 34px;
+            margin-right: 94px;
+            font-size: 1rem;
+        }
+
+        .skill {
+            width: calc(50% - 20px);
+            margin: 15px 0;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-bar {
+            height: 3px;
+            background-color: #ddd;
+            margin-top: 14px;
+            position: relative;
+        }
+
+        .skill-bar::after {
+            content: "";
+            position: absolute;
+            height: 6px;
+            background-color: #48dbfb;
+            bottom: 0;
+        }
+
+        .html:after {
+            width: 90%;
+        }
+
+        .css:after {
+            width: 80%;
+        }
+
+        .js:after {
+            width: 80%;
+        }
+
+        .python:after {
+            width: 79%;
+        }
+
+        .bootstrap:after {
+            width: 10%;
+        }
+
+        .c:after {
+            width: 85%;
+        }
+
+        section.dark {
+            background-color: #353b48;
+        }
+
+        section.dark .section-title {
+            color: #f1f1f1;
+        }
+
+        section.dark .section-title::before {
+            background-color: #f1f1f1;
+        }
+
+        section.dark .section-title::after {
+            border: 4px solid #353b48;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            font-family: "Baloo Bhai 2", cursive;
+            background-color: black;
+            color: white;
+            padding: 9px 20px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #48dbfb;
+        }
+
+        /* EDUCATION */
+
+        #Education {
+            margin: 15px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+        }
+
+        #Education .box {
+            margin: 12px 70px;
+            padding: 24px;
+            border-radius: 3px;
+            background-color: white;
+            margin-bottom: 15px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            border-radius: 10px;
+        }
+
+        #Education .box:hover {
+            box-shadow: rgba(246, 246, 252, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+
+        .box-items {
+            padding: 2px 3px;
+        }
+
+        .centre {
+            text-align: center;
+            padding: 27px 0px;
+            font-size: 1.4rem;
+        }
+
+        /* CERTIFICATES */
+
+        #certificate {
+            font-family: 'Merriweather', serif;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin: 15px;
+            font-size: 1rem;
+        }
+
+        .certificate-box {
+            padding: 15px 40px;
+            box-shadow: 20px 0px #c0e2eb;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .certificate-box img {
+            border-radius: 10px;
+        }
+
+        .certificate-box:hover {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+
+        .cert {
+            text-align: center;
+            font-family: 'Merriweather', serif;
+            padding: 14px 0px;
+        }
+
+        /* Contacts-icon*/
+
+        #contact-sticker {
+            color: var(--color-fg-default) !important;
+            font-family: 'Merriweather', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 1px;
+        }
+
+        .contact-items {
+            padding: 0px 25px;
+            margin: 0px 18px;
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+        }
+
+        /* CONTACT */
+
+        #contact-me {
+            position: relative;
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+        }
+
+        .inp {
+            display: flex;
+            flex-direction: row;
+            font-size: 1rem;
+            padding-top: 22px;
+        }
+
+        .form-group {
+            padding: 6px 0px;
+            display: block;
+        }
+
+        #contact-me::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            opacity: 0.3;
+            background-color: black;
+        }
+
+        .h-primary {
+            text-align: center;
+            top: 15px;
+            padding: 12px 0px;
+            position: relative;
+        }
+
+        #contact-box input,
+        #contact-box textarea {
+            padding: 6px 0px;
+            width: 100%;
+            border-radius: 9px;
+            font-size: 0.8rem;
+        }
+
+        #contact-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 34px 0px;
+        }
+
+        form {
+            z-index: 1;
+        }
+
+        #contact-me .form-group {
+            font-size: 1rem;
+            font-family: "Baloo Bhai 2", cursive;
+        }
+
+        #contact-me .form-group .inp {
+            font-size: 1rem;
+        }
+
+        #contact-me .form-group input {
+            cursor: pointer;
+            padding-left: 5px;
+        }
+
+        #contact-me .form-group option {
+            font-size: 1rem;
+            font-family: "Baloo Bhai 2", cursive;
+        }
+
+        #contact-me .form-group select {
+            padding: 3px;
+            font-size: 1rem;
+            font-family: "Baloo Bhai 2", cursive;
+            border-radius: 8px;
+        }
+
+        #contac-box form {
+            width: 40%;
+        }
+
+        #contact-box label {
+            font-size: 1rem;
+        }
+
+        #contact-me {
+            font-size: 1rem;
+        }
+
+        @media only screen and (max-width:1000px) {
+
+            /* NAVBAR */
+            #navbar {
+                align-items: center;
+                justify-content: center;
+            }
+
+            #navbar ul li {
+                font-size: 0.8rem;
+            }
+
+            #navbar ul a {
+                padding: 20px 9px;
+                margin: 1px 5px;
+            }
+
+            /* HOME */
+            #home {
+                display: flex;
+                flex-direction: column;
+                font-size: 1rem;
+            }
+
+            #home .item {
+                text-align: center;
+                padding: 2px;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                margin: 24px 10px;
+            }
+
+            .container-items .items {
+                padding: 5px 10px;
+            }
+
+            .container-items .image {
+                width: 30px;
+                height: 30px;
+            }
+
+            /* ABOUT */
+            #about {
+                display: block;
+                font-size: 0.9rem;
+                padding-left: 6px;
+                text-align: center;
+            }
+
+            #about .item {
+                display: block;
+            }
+
+            .myimage {
+                display: none;
+            }
+
+            #about .profile-image {
+                width: 200px;
+                height: 200px;
+                display: block;
+            }
+
+            #about .data {
+                margin-left: 2px;
+            }
+
+            #about h2.item {
+                padding-bottom: 10px;
+            }
+
+            /* SKILL */
+            .skills {
+                margin-top: 12px;
+                font-size: 1rem;
+                justify-content: center;
+                align-items: center;
+                margin-right: 0px;
+                margin-left: 0px;
+            }
+
+            #skill {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .skill {
+                width: calc(46% - 47px);
+                margin: 15px 0;
+                padding: 0px 17px;
+                padding-left: 20px;
+            }
+
+            /* EDUCATION */
+            #Education {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #Education .box {
+                margin: 10px 50px;
+                font-size: 1.1rem;
+            }
+
+            /* CERTIFICATE */
+            #certificate {
+                flex-wrap: wrap;
+                line-height: 0;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #certificates .certificate-image {
+                height: 180px;
+                width: 318px;
+            }
+
+            .certificate-box {
+                box-shadow: none;
+                padding: 14px 40px;
+            }
+
+            .centre {
+                padding: 10px 0px;
+            }
+
+            .cert {
+                padding: 16px 0px;
+            }
+
+            /* CONTACT */
+            #contact-box {
+                padding-left: 12px;
+            }
+
+            #contact-box label {
+                font-size: 1.2rem;
+                padding-left: 3px;
+            }
+
+            #contact-me .form-group {
+                font-size: 0.8rem;
+                padding-left: 9px;
+            }
+
+            #contact-me .form-group input {
+                width: 90%;
+                padding-left: 9px;
+            }
+
+            #contact-box textarea {
+                width: 90%;
+                padding-left: 9px;
+            }
+
+            /* CONTACT BEFORE FOOTER */
+            #contact-sticker .social-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            /* FOOTER */
+            .footer {
+                padding: 2px 0px;
+            }
+        }
+
+        /* HOME */
+    </style>
+
+
+</head>
+
+<body>
+    <nav id="navbar">
+
+
+        <ul class="UL">
+            <li class="listitem"><a href="#home">Home</a></li>
+            <li class="listitem"><a href="#about">About </a></li>
+            <li class="listitem"><a href="#education">Education</a></li>
+            <li class="listitem"><a href="#certificates">Certifications</a></li>
+
+            <li class="listitem"> <a href="#cont-stick">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+
+    </section>
+    <section id="home">
+        <h2 class="item">I'm Anshu Sharma</h2>
+
+
+        <p class="item">I'm a Student , exploring and learning New things.</p>
+        <div class="container-items">
+            <div class="items">
+                <a href="https://www.instagram.com/anshu__pandat__01/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png"
+                        alt="Instagram" width="40px" ,height=30px class="image">
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://www.facebook.com/daroga.pandat" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" width="40px"
+                        ,height=30px class="image">
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://github.com/AnshuSh01" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Github" width="40px"
+                        ,height=30px class="image">
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://www.linkedin.com/in/anshu-sharma-504b25229/" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Linkedin" width="40px"
+                        ,height=30px class="image">
+                </a>
+            </div>
+        </div>
+
+        <div class="butt">
+            <a href="#contact-me"><button class="btn">Notify Me</button></a>
+
+            <a href="https://drive.google.com/file/d/1ujPD2iuCzPbZNNUve1iccoaXccKGnBMI/view" target="_blank"><button
+                    class="btn">Resume</button></a>
+        </div>
+
+    </section>
+
+
+    <section id="about">
+        <div class="myimage">
+            <img src="https://i.postimg.cc/pL4HsR4P/1675081540633.jpg" alt="Myimage" width="300px" height="288px"
+                class="profile-image">
+        </div>
+        <div class="data">
+            <div class="D">
+                <h2 class="item">About Me </h2>
+            </div>
+            <div class="D">
+                <h3 class="item"> Hi,i am Anshu Sharma</h3>
+            </div>
+            <div class="D">
+                <p>I am doing B.tech-Computer science and enginering from IMS Engineering College. I have done my 12th
+                    from
+                    Dolphin Public School. My goal is to become a Software Developer. I am good at problem-solving as I
+                    used to code at leetcode, GFG coding platforms. I have all the required
+                    technical skills like: Html5, Css3, Javascript, Java, Nodejs, MongoDB some are my technical
+                    proficiency. I am a hard-working and goal-oriented personality. Time management means a lot to me
+                    and never compromise with it and always try to be more
+                    punctual. I am a good learner and adapt myself according to situations.
+            </div>
+
+        </div>
+
+    </section>
+    <section id="skill">
+
+        <div class="skills">
+
+            <div class="skill">
+
+
+                <div class="skill-info">
+                    <span>HTML</span>
+                    <span>70%</span>
+                </div>
+
+            </div>
+
+            <div class="skill">
+
+
+                <div class="skill-info">
+                    <span>CSS</span>
+                    <span>60%</span>
+                </div>
+
+            </div>
+
+            <div class="skill">
+
+
+                <div class="skill-info">
+                    <span>Javascript</span>
+                    <span>60%</span>
+                </div>
+
+            </div>
+
+            <div class="skill">
+
+
+                <div class="skill-info">
+                    <span> Java</span>
+                    <span>70%</span>
+                </div>
+
+            </div>
+
+
+
+            <div class="skill">
+
+
+                <div class="skill-info">
+                    <span>Bootstrap</span>
+                    <span>20%</span>
+                </div>
+
+            </div>
+
+            <div class="skill">
+
+
+                <div class="skill-info">
+                    <span>C Programming</span>
+                    <span>50%</span>
+                </div>
+
+            </div>
+            <div class="skill">
+
+
+                <div class="skill-info">
+                    <span>Nodejs</span>
+                    <span>60%</span>
+                </div>
+
+            </div>
+            <div class="skill">
+
+                <div class="skill-info">
+                    <span>MongoDB</span>
+                    <span>50%</span>
+                </div>
+
+            </div>
+    </section>
+
+    <section id="education">
+        <h2 class="centre">Education</h2>
+
+        <div id="Education">
+
+            <div class="box">
+                <h3>2020-2024</h3>
+
+                <h3 class="box-items"> B.tech-(CSE)</h3>
+
+                <p>IMS Enggineering College </p>
+                <p>Percentage:85%</p>
+            </div>
+
+
+            <div class="box">
+                <h3>2018-2020</h3>
+
+                <h3 class="box-items">12th</h3>
+                <p>Dolphin Public School</p>
+                <p>Percentage:83%</p>
+
+
+            </div>
+            <div class="box">
+                <h3>2016-2018</h3>
+                <h3 class="box-items">10th</h3>
+                <p>Dolphin Public School</p>
+                <p>Percentage:72%</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h3 class="centre">Projects</h3>
+        <div id="certificate">
+            <div class="certificate-box">
+                <h5 class="cert">Online Food Ordering System </h5>
+                <a href='https://github.com/AnshuSh01/Online-Food-Ordering-System' target='_blank'><img
+                        src='https://i.postimg.cc/sf8j3xx3/food.png' border='0' alt='food' width="250px" ,
+                        height="185px" class="certificate-image"></a>
+
+
+            </div>
+            <div class="certificate-box">
+                <h5 class="cert">Library System </h5>
+                <a href='https://github.com/AnshuSh01/Library-System' target='_blank'><img
+                        src='https://i.postimg.cc/3NQtZ29K/235205037-44400349-ef72-4e36-855a-83b7a6706032.png'
+                        border='0' alt='235205037-44400349-ef72-4e36-855a-83b7a6706032' width="250px" , height="185px"
+                        class="certificate-image"></a>
+
+            </div>
+            <div class="certificate-box">
+                <h5 class="cert">Coding Quiz </h5>
+                <a href='https://github.com/AnshuSh01/Coding_Quiz' target='_blank'><img
+                        src='https://i.postimg.cc/BZ5L6xWJ/coding-quiz.png' border='0' alt='coding-quiz' width="250px" ,
+                        height="185px" class="certificate-image"></a>
+            </div>
+
+
+        </div>
+    </section>
+    <section id="certificates">
+        <div id="certificate">
+            <div class="certificate-box">
+                <h5 class="cert">Dynamic-Quotes JS </h5>
+                <a href='https://github.com/AnshuSh01/Dynamic-Quotes-Using-ExpressJs-JS' target='_blank'><img
+                        src='https://i.postimg.cc/QMP5QsSs/Dynamic.png' border='0' alt='Dynamic' width="250px" ,
+                        height="185px" class="certificate-image"></a>
+
+            </div>
+            <div class="certificate-box">
+                <h5 class="cert">ATM Interface </h5>
+                <a href='https://github.com/AnshuSh01/ATM-Interface-Using-Java' target='_blank'><img
+                        src='https://i.postimg.cc/1zyDmJXh/ATM.png' border='0' alt='ATM' width="250px" , height="185px"
+                        class="certificate-image"></a>
+
+            </div>
+            <div class="certificate-box">
+                <h5 class="cert">E-voting-System</h5>
+                <a href='https://github.com/AnshuSh01/E-voting-System/tree/main' target='_blank'><img
+                        src='https://i.postimg.cc/PxzcL6zW/E-voting.png' border='0' alt='E-voting' width="250px" ,
+                        height="185px" class="certificate-image"></a>
+
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h3 class="centre">Certificates</h3>
+        <div id="certificate">
+            <div class="certificate-box">
+                <h5 class="cert">Problem Solving (Basic)</h5>
+                <a href='https://www.hackerrank.com/certificates/75595353473c' target='_blank'>
+                    <img src='https://i.postimg.cc/SnxmFNX1/Problem-solving.png' border='0' alt='Problem-solving'
+                        width="250px" , height="185px" class="certificate-image"></a>
+
+
+            </div>
+            <div class="certificate-box">
+                <h5 class="cert">Java (Basic)</h5>
+                <a href='https://www.hackerrank.com/certificates/c4713d6bb5a1' target='_blank'><img
+                        src='https://i.postimg.cc/T5nn6Jsx/Java-Basic.png' border='0' alt='Java-Basic' width="250px" ,
+                        height="185px" class="certificate-image"></a>
+
+            </div>
+            <div class="certificate-box">
+                <h5 class="cert">Responsive Web Design</h5>
+                <a href='https://www.freecodecamp.org/certification/fccf6beefd2-561b-418f-98cd-6c7a13b775e7/responsive-web-design'
+                    target='_blank'><img src='https://i.postimg.cc/87csdbbC/Responsive-web-design.png' border='0'
+                        alt='Responsive-web-design' width="250px" , height="185px" class="certificate-image"></a>
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <section id="contact-me">
+        <h2 class="h-primary ">Notify Me</h2>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="First Name">
+                    <input type="text" name="name" id="name" placeholder="Middle Name">
+                    <input type="text" name="name" id="name" placeholder="Last Name">
+                </div>
+                <div class="form-group" id="NICHE">
+                    <label for="Birthday">Select Birth:</label>
+                    <input type="date" name="Birthday" id="Birthday">
+
+                </div>
+                <div class="form-group">
+                    <label for="Gender">Gender: </label>
+                    <br>
+                    <div class="inp">
+                        Male<input type="radio" name="Gender" id="Gender"> Female <input type="radio" name="Gender"
+                            id="Gender"> Other <input type="radio" name="Gender" id="Gender">
+                    </div>
+
+
+                </div>
+                <div class="form-group">
+                    <label for="Address">Address :</label>
+                    <input type="text" name="Address" id="Address" placeholder=" Enter Your Address">
+
+                    <div class="form-group" class="NICHE">
+                        <label for="email">Enter Email :</label>
+                        <input type="email" name="email" id="email" placeholder="Enter Your Email">
+                    </div>
+                    <div class="form-group" class="NICHE">
+                        <label for="phone">Phone :</label>
+                        <input type="tel" name="phone" id="phone" placeholder="Enter Your Number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Additional Comments:</label>
+                        <textarea name="text" id="textarea" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit Application" id="submit">
+
+                    </div>
+                    <div class="form-group">
+                        <input type="reset" value="Clear Fields">
+
+                    </div>
+
+            </form>
+        </div>
+    </section>
+    <section id="cont-stick">
+        <h3 class="centre">Contact</h3>
+        <hr>
+        <div id="contact-sticker">
+            <div class="contact-items">
+                <a href="tel:9069628494" target="_blank">
+                    <img src="https://i.pinimg.com/originals/84/4e/8c/844e8cd4ab26c82286238471f0e5a901.png" alt="Phone"
+                        width="50px" height=40px class="social-icon">
+
+                </a>
+
+
+            </div>
+            <div class="contact-items">
+                <a href="mailto:anshush0609@gmail.com" target="_blank">
+                    <img src="https://i.pinimg.com/originals/8f/c3/7b/8fc37b74b608a622588fbaa361485f32.png" alt="Email"
+                        width="50px" height=40px class="social-icon">
+                </a>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        &copy; 2023 | Created & Designed By <a href="#home">Anshu Sharma</a>
+
+    </footer>
+
+</body>
+
+</html>
